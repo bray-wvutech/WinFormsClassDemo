@@ -9,15 +9,6 @@ public partial class MainForm : Form
 
     private void MainForm_Load(object sender, EventArgs e)
     {
-        // creating a Person object with parameterized constructor
-        Person p1 = new Person(0, "Steve", 22);
-        // creating a Person object with default constructor and initializer
-        Person p2 = new Person()
-        {
-            ID = 1,
-            Name = "Mary",
-            Age = 32
-        };
     }
 
     private void showButton_Click(object sender, EventArgs e)
@@ -41,8 +32,14 @@ public partial class MainForm : Form
     {
         try
         {
-            // we are going to make a new person and pass it in through forms constructor
-            Person p = new Person(0, nameTextBox.Text, int.Parse(ageTextBox.Text));
+            // we are going to make a new person with an initalizer
+            Person p = new Person()
+            { 
+                ID = 1,
+                Name = nameTextBox.Text,
+                Age = int.Parse(ageTextBox.Text)
+            };
+
             ChildForm childForm = new(p);
 
             // modeless window - does not block input

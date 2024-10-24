@@ -28,31 +28,72 @@ partial class ChildForm
     /// </summary>
     private void InitializeComponent()
     {
-        childLabel = new Label();
+        nameLabel = new Label();
+        ageLabel = new Label();
+        adultCheckBox = new CheckBox();
+        seniorCheckBox = new CheckBox();
         SuspendLayout();
         // 
-        // childLabel
+        // nameLabel
         // 
-        childLabel.BorderStyle = BorderStyle.FixedSingle;
-        childLabel.Location = new Point(86, 77);
-        childLabel.Name = "childLabel";
-        childLabel.Size = new Size(310, 38);
-        childLabel.TabIndex = 0;
-        childLabel.Text = "label1";
+        nameLabel.BorderStyle = BorderStyle.FixedSingle;
+        nameLabel.Location = new Point(86, 77);
+        nameLabel.Name = "nameLabel";
+        nameLabel.Size = new Size(310, 29);
+        nameLabel.TabIndex = 0;
+        nameLabel.Text = "label1";
+        // 
+        // ageLabel
+        // 
+        ageLabel.BorderStyle = BorderStyle.FixedSingle;
+        ageLabel.Location = new Point(86, 141);
+        ageLabel.Name = "ageLabel";
+        ageLabel.Size = new Size(310, 29);
+        ageLabel.TabIndex = 1;
+        ageLabel.Text = "label1";
+        // 
+        // adultCheckBox
+        // 
+        adultCheckBox.AutoSize = true;
+        adultCheckBox.Enabled = false;
+        adultCheckBox.Location = new Point(86, 208);
+        adultCheckBox.Name = "adultCheckBox";
+        adultCheckBox.Size = new Size(81, 24);
+        adultCheckBox.TabIndex = 2;
+        adultCheckBox.Text = "Is Adult";
+        adultCheckBox.UseVisualStyleBackColor = true;
+        // 
+        // seniorCheckBox
+        // 
+        seniorCheckBox.AutoSize = true;
+        seniorCheckBox.Enabled = false;
+        seniorCheckBox.Location = new Point(260, 208);
+        seniorCheckBox.Name = "seniorCheckBox";
+        seniorCheckBox.Size = new Size(136, 24);
+        seniorCheckBox.TabIndex = 3;
+        seniorCheckBox.Text = "Is Senior Citizen";
+        seniorCheckBox.UseVisualStyleBackColor = true;
         // 
         // ChildForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(476, 223);
-        Controls.Add(childLabel);
+        ClientSize = new Size(476, 337);
+        Controls.Add(seniorCheckBox);
+        Controls.Add(adultCheckBox);
+        Controls.Add(ageLabel);
+        Controls.Add(nameLabel);
         Name = "ChildForm";
         Text = "Child Form";
         Load += ChildForm_Load;
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
-    private Label childLabel;
+    private Label nameLabel;
+    private Label ageLabel;
+    private CheckBox adultCheckBox;
+    private CheckBox seniorCheckBox;
 }

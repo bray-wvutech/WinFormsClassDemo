@@ -11,19 +11,22 @@ using System.Windows.Forms;
 namespace WinFormsClassDemo;
 public partial class ChildForm : Form
 {
-    // we can add properties to our form just like any other class
-    // in this case an auto property for DateTime
-    public DateTime DisplayDate { get; set; }
+    // it is a naming convention that we usually put an underscore before
+    // private field names
+    private Person _person;
 
     // we can pass things into our forms constructor just like any other class
-    public ChildForm(DateTime dt)
+    public ChildForm(Person p)
     {
-        DisplayDate = dt;
+        _person = p;
         InitializeComponent();
     }
 
     private void ChildForm_Load(object sender, EventArgs e)
     {
-        childLabel.Text = DisplayDate.ToString();
+        nameLabel.Text = _person.Name;
+        ageLabel.Text = _person.Age.ToString();
+        adultCheckBox.Checked = _person.IsAdult;
+        seniorCheckBox.Checked = _person.IsSeniorCitizen;
     }
 }

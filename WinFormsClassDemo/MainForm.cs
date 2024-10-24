@@ -22,25 +22,35 @@ public partial class MainForm : Form
 
     private void showButton_Click(object sender, EventArgs e)
     {
-        // we are passing date from DateTimePicker into constructor
-        ChildForm childForm = new(mainDateTimePicker.Value);
+        try
+        {
+            // we are going to make a new person and pass it in through forms constructor
+            Person p = new Person(0, nameTextBox.Text, int.Parse(ageTextBox.Text));
+            ChildForm childForm = new(p);
 
-        // note we can also set the date through the forms property we added
-        //childForm.DisplayDate = new DateTime(2032, 11, 1);
-
-        // modal window - blocks input
-        childForm.ShowDialog(); 
+            // modal window - blocks input
+            childForm.ShowDialog();
+        }
+        catch
+        {
+            MessageBox.Show("ERROR: Not a valid person.");
+        }
     }
 
     private void modelessButton_Click(object sender, EventArgs e)
     {
-        // we are passing date from DateTimePicker into constructor
-        ChildForm childForm = new(mainDateTimePicker.Value);
+        try
+        {
+            // we are going to make a new person and pass it in through forms constructor
+            Person p = new Person(0, nameTextBox.Text, int.Parse(ageTextBox.Text));
+            ChildForm childForm = new(p);
 
-        // note we can also set the date through the forms property we added
-        //childForm.DisplayDate = DateTime.Now.AddDays(7);
-
-        // modeless window - does not block
-        childForm.Show();
+            // modeless window - does not block input
+            childForm.Show();
+        }
+        catch
+        {
+            MessageBox.Show("ERROR: Not a valid person.");
+        }
     }
 }

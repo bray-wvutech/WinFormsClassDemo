@@ -34,6 +34,9 @@ partial class MainForm
         ageTextBox = new TextBox();
         nameLabel = new Label();
         ageLabel = new Label();
+        staticTestLabel = new Label();
+        oddCheckBox = new CheckBox();
+        evenCheckBox = new CheckBox();
         SuspendLayout();
         // 
         // modalButton
@@ -69,6 +72,7 @@ partial class MainForm
         ageTextBox.Name = "ageTextBox";
         ageTextBox.Size = new Size(250, 27);
         ageTextBox.TabIndex = 4;
+        ageTextBox.TextChanged += ageTextBox_TextChanged;
         // 
         // nameLabel
         // 
@@ -88,11 +92,45 @@ partial class MainForm
         ageLabel.TabIndex = 6;
         ageLabel.Text = "&Age";
         // 
+        // staticTestLabel
+        // 
+        staticTestLabel.BorderStyle = BorderStyle.FixedSingle;
+        staticTestLabel.Location = new Point(73, 358);
+        staticTestLabel.Name = "staticTestLabel";
+        staticTestLabel.Size = new Size(250, 25);
+        staticTestLabel.TabIndex = 8;
+        staticTestLabel.Text = "Person created: 0";
+        // 
+        // oddCheckBox
+        // 
+        oddCheckBox.AutoSize = true;
+        oddCheckBox.Enabled = false;
+        oddCheckBox.Location = new Point(346, 149);
+        oddCheckBox.Name = "oddCheckBox";
+        oddCheckBox.Size = new Size(58, 24);
+        oddCheckBox.TabIndex = 9;
+        oddCheckBox.Text = "odd";
+        oddCheckBox.UseVisualStyleBackColor = true;
+        // 
+        // evenCheckBox
+        // 
+        evenCheckBox.AutoSize = true;
+        evenCheckBox.Enabled = false;
+        evenCheckBox.Location = new Point(410, 149);
+        evenCheckBox.Name = "evenCheckBox";
+        evenCheckBox.Size = new Size(62, 24);
+        evenCheckBox.TabIndex = 10;
+        evenCheckBox.Text = "even";
+        evenCheckBox.UseVisualStyleBackColor = true;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(403, 398);
+        ClientSize = new Size(529, 431);
+        Controls.Add(evenCheckBox);
+        Controls.Add(oddCheckBox);
+        Controls.Add(staticTestLabel);
         Controls.Add(ageLabel);
         Controls.Add(nameLabel);
         Controls.Add(ageTextBox);
@@ -113,4 +151,7 @@ partial class MainForm
     private TextBox ageTextBox;
     private Label nameLabel;
     private Label ageLabel;
+    private Label staticTestLabel;
+    private CheckBox oddCheckBox;
+    private CheckBox evenCheckBox;
 }

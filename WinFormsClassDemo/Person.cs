@@ -9,6 +9,7 @@ public class Person
 {
     public Person()
     {
+        CreatedCount++;
     }
 
     // lets go ahead and add some parameters to our constructor
@@ -18,6 +19,8 @@ public class Person
         ID = id;
         Name = name;
         Age = age;
+        // static property
+        CreatedCount++;
     }
 
     // this is an automatic property for Name
@@ -69,4 +72,8 @@ public class Person
     // this is useful for things you want to be immutable
     // for example an ID of some kind read from a database
     public int ID { get; init; }
+
+    // a static property used to keep track of how many Person objects
+    // have been created
+    public static int CreatedCount { get; private set; } = 0;
 }

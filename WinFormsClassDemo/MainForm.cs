@@ -69,4 +69,16 @@ public partial class MainForm : Form
             oddCheckBox.Checked = age.IsOdd();
         }
     }
+
+    private void colorButton_Click(object sender, EventArgs e)
+    {
+        ReadOnlyColor myColor = new(255, 255, 255); // white
+        MessageBox.Show(myColor.ToString());
+
+        myColor = ReadOnlyColor.Black;
+        MessageBox.Show(myColor.ToString());
+
+        myColor = ReadOnlyColor.Blue;
+        MessageBox.Show(myColor.ToString());
+    }
 }

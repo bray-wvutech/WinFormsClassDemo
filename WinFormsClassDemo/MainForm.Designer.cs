@@ -37,6 +37,7 @@ partial class MainForm
         staticTestLabel = new Label();
         oddCheckBox = new CheckBox();
         evenCheckBox = new CheckBox();
+        colorButton = new Button();
         SuspendLayout();
         // 
         // modalButton
@@ -123,11 +124,22 @@ partial class MainForm
         evenCheckBox.Text = "even";
         evenCheckBox.UseVisualStyleBackColor = true;
         // 
+        // colorButton
+        // 
+        colorButton.Location = new Point(378, 285);
+        colorButton.Name = "colorButton";
+        colorButton.Size = new Size(94, 29);
+        colorButton.TabIndex = 11;
+        colorButton.Text = "Color";
+        colorButton.UseVisualStyleBackColor = true;
+        colorButton.Click += colorButton_Click;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(529, 431);
+        Controls.Add(colorButton);
         Controls.Add(evenCheckBox);
         Controls.Add(oddCheckBox);
         Controls.Add(staticTestLabel);
@@ -154,4 +166,5 @@ partial class MainForm
     private Label staticTestLabel;
     private CheckBox oddCheckBox;
     private CheckBox evenCheckBox;
+    private Button colorButton;
 }

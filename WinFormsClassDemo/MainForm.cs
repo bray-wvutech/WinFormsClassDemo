@@ -32,22 +32,27 @@ public partial class MainForm : Form
         }
     }
 
+    private ChildForm childForm;
+
     private void modelessButton_Click(object sender, EventArgs e)
     {
         try
         {
-            // we are going to make a new person with an initalizer
-            Person p = new Person()
+           // we are going to make a new person with an initalizer
+           Person p = new Person()
+           {
+               ID = 1,
+               Name = nameTextBox.Text,
+               Age = int.Parse(ageTextBox.Text)
+           };
+
+            if ((childForm == null) || !childForm.Visible)
             {
-                ID = 1,
-                Name = nameTextBox.Text,
-                Age = int.Parse(ageTextBox.Text)
-            };
+                childForm = new(p);
 
-            ChildForm childForm = new(p);
-
-            // modeless window - does not block input
-            childForm.Show();
+                // modeless window - does not block input
+                childForm.Show();
+            }
 
             staticTestLabel.Text = $"Person created: {Person.CreatedCount}";
         }

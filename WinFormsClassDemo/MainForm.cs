@@ -11,6 +11,11 @@ public partial class MainForm : Form
 
     private void MainForm_Load(object sender, EventArgs e)
     {
+        listBox1.Items.Add(new Person(0, "person 4", 12));
+        listBox1.Items.Add(new Person(0, "person 5", 21));
+        listBox1.Items.Add(new Person(0, "person 3", 89));
+        listBox1.Items.Add(new Person(0, "person 1", 67));
+        listBox1.Items.Add(new Person(0, "person 2", 32));
     }
 
     private void showButton_Click(object sender, EventArgs e)
@@ -19,7 +24,7 @@ public partial class MainForm : Form
         {
             // we are going to make a new person and pass it in through forms constructor
             Person p = new Person(0, nameTextBox.Text, int.Parse(ageTextBox.Text));
-            ChildForm childForm = new(p);
+            childForm = new(p);
 
             // modal window - blocks input
             childForm.ShowDialog();
@@ -38,13 +43,13 @@ public partial class MainForm : Form
     {
         try
         {
-           // we are going to make a new person with an initalizer
-           Person p = new Person()
-           {
-               ID = 1,
-               Name = nameTextBox.Text,
-               Age = int.Parse(ageTextBox.Text)
-           };
+            // we are going to make a new person with an initalizer
+            Person p = new Person()
+            {
+                ID = 1,
+                Name = nameTextBox.Text,
+                Age = int.Parse(ageTextBox.Text)
+            };
 
             if ((childForm == null) || !childForm.Visible)
             {
@@ -85,5 +90,11 @@ public partial class MainForm : Form
 
         myColor = ReadOnlyColor.Blue;
         MessageBox.Show(myColor.ToString());
+    }
+
+    private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Person p = (Person)listBox1.SelectedItem;
+        staticTestLabel.Text = p.Age.ToString();
     }
 }

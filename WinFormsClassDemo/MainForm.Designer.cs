@@ -38,6 +38,7 @@ partial class MainForm
         oddCheckBox = new CheckBox();
         evenCheckBox = new CheckBox();
         colorButton = new Button();
+        listBox1 = new ListBox();
         SuspendLayout();
         // 
         // modalButton
@@ -134,11 +135,22 @@ partial class MainForm
         colorButton.UseVisualStyleBackColor = true;
         colorButton.Click += colorButton_Click;
         // 
+        // listBox1
+        // 
+        listBox1.FormattingEnabled = true;
+        listBox1.Location = new Point(492, 151);
+        listBox1.Name = "listBox1";
+        listBox1.Size = new Size(336, 224);
+        listBox1.Sorted = true;
+        listBox1.TabIndex = 12;
+        listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(529, 431);
+        ClientSize = new Size(857, 431);
+        Controls.Add(listBox1);
         Controls.Add(colorButton);
         Controls.Add(evenCheckBox);
         Controls.Add(oddCheckBox);
@@ -167,4 +179,5 @@ partial class MainForm
     private CheckBox oddCheckBox;
     private CheckBox evenCheckBox;
     private Button colorButton;
+    private ListBox listBox1;
 }

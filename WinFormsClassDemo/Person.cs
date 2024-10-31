@@ -76,4 +76,9 @@ public class Person
     // a static property used to keep track of how many Person objects
     // have been created
     public static int CreatedCount { get; private set; } = 0;
+
+    public override string ToString()
+    {
+        return Name;
+    }
 }

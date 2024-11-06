@@ -39,6 +39,9 @@ partial class MainForm
         evenCheckBox = new CheckBox();
         colorButton = new Button();
         listBox1 = new ListBox();
+        animalButton = new Button();
+        interfaceButton = new Button();
+        interface2Button = new Button();
         SuspendLayout();
         // 
         // modalButton
@@ -127,29 +130,62 @@ partial class MainForm
         // 
         // colorButton
         // 
-        colorButton.Location = new Point(378, 285);
+        colorButton.Location = new Point(491, 285);
         colorButton.Name = "colorButton";
-        colorButton.Size = new Size(94, 29);
+        colorButton.Size = new Size(150, 29);
         colorButton.TabIndex = 11;
-        colorButton.Text = "Color";
+        colorButton.Text = "Color Demo";
         colorButton.UseVisualStyleBackColor = true;
         colorButton.Click += colorButton_Click;
         // 
         // listBox1
         // 
         listBox1.FormattingEnabled = true;
-        listBox1.Location = new Point(492, 151);
+        listBox1.Location = new Point(491, 40);
         listBox1.Name = "listBox1";
         listBox1.Size = new Size(336, 224);
         listBox1.Sorted = true;
         listBox1.TabIndex = 12;
         listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
         // 
+        // animalButton
+        // 
+        animalButton.Location = new Point(677, 285);
+        animalButton.Name = "animalButton";
+        animalButton.Size = new Size(150, 29);
+        animalButton.TabIndex = 13;
+        animalButton.Text = "Animal Demo";
+        animalButton.UseVisualStyleBackColor = true;
+        animalButton.Click += animalButton_Click;
+        // 
+        // interfaceButton
+        // 
+        interfaceButton.Location = new Point(491, 354);
+        interfaceButton.Name = "interfaceButton";
+        interfaceButton.Size = new Size(150, 29);
+        interfaceButton.TabIndex = 14;
+        interfaceButton.Text = "Interface Demo 1";
+        interfaceButton.UseVisualStyleBackColor = true;
+        interfaceButton.Click += interfaceButton_Click;
+        // 
+        // interface2Button
+        // 
+        interface2Button.Location = new Point(677, 355);
+        interface2Button.Name = "interface2Button";
+        interface2Button.Size = new Size(150, 29);
+        interface2Button.TabIndex = 15;
+        interface2Button.Text = "Interface Demo 2";
+        interface2Button.UseVisualStyleBackColor = true;
+        interface2Button.Click += interface2Button_Click;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(857, 431);
+        ClientSize = new Size(907, 431);
+        Controls.Add(interface2Button);
+        Controls.Add(interfaceButton);
+        Controls.Add(animalButton);
         Controls.Add(listBox1);
         Controls.Add(colorButton);
         Controls.Add(evenCheckBox);
@@ -180,4 +216,7 @@ partial class MainForm
     private CheckBox evenCheckBox;
     private Button colorButton;
     private ListBox listBox1;
+    private Button animalButton;
+    private Button interfaceButton;
+    private Button interface2Button;
 }

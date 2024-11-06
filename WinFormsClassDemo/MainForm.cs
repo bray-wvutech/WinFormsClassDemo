@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using WinFormsClassDemo.Animals;
+using WinFormsClassDemo.Interfaces;
 using WinFormsClassDemo.Utilities;
 
 namespace WinFormsClassDemo;
@@ -96,5 +99,40 @@ public partial class MainForm : Form
     {
         Person p = (Person)listBox1.SelectedItem;
         staticTestLabel.Text = p.Age.ToString();
+    }
+
+    private void animalButton_Click(object sender, EventArgs e)
+    {
+        // NOTE the using statement at the top that imports the animal classes
+        List<Animal> animals = new List<Animal>();
+
+        // trying to add a new Animal will give you an error
+        // because you can't instantiate an abstract class
+        // animals.Add(new Animal());
+
+        animals.Add(new Cat());
+        animals.Add(new Dog());
+
+        foreach (Animal animal in animals)
+        {
+            MessageBox.Show($"The {animal.Type} says {animal.Speak()}");
+        }
+    }
+
+    private void InterfaceParamTest(ILogger logger)
+    {
+        logger.Log("this is a test");
+    }
+
+    private void interfaceButton_Click(object sender, EventArgs e)
+    {
+        ILogger logger = new TraceLogger();
+        InterfaceParamTest(logger);
+    }
+
+    private void interface2Button_Click(object sender, EventArgs e)
+    {
+        ILogger logger = new MessageBoxLogger();
+        InterfaceParamTest(logger);
     }
 }

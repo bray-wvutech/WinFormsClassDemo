@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace WinFormsClassDemo;
 public class ReadOnlyColor
 {
+    // readonly is like const but for reference types
     public static readonly ReadOnlyColor Red = new ReadOnlyColor(255, 0, 0);
     public static readonly ReadOnlyColor Green = new ReadOnlyColor(0, 255, 0);
     public static readonly ReadOnlyColor Blue = new ReadOnlyColor(0, 0, 255);
